@@ -5,7 +5,7 @@ date:   2023-09-08 16:00:00 -0300
 categories: Spring
 ---
 
-O Spring Framework é um dos frameworks mais utilizados no mundo do desenvolvimento Java. Uma alternativa ao EJB, que na época era extremamente verboso e desnecessariamente complexo, caiu na graça dos desenvolvedores, pela sua simplicidade e robustez. Desde sua criação, foram surgindo módulos, que atendem às mais diversas necessidades, como acesso a banco de dados, web e cloud. Vamos dar uma olhada geral nos principais projetos, e entender um pouco mais como funciona esse ecossistema. 
+O Spring Framework é um dos frameworks mais utilizados no mundo do desenvolvimento Java. Surgiu como uma alternativa ao EJB, que na época era extremamente verboso e desnecessariamente complexo, caiu na graça dos desenvolvedores, pela sua simplicidade e robustez. Desde sua criação, foram surgindo módulos, que atendem às mais diversas necessidades, como acesso a banco de dados, web e cloud. Vamos dar uma olhada geral nos principais projetos, e entender um pouco mais como funciona esse ecossistema. 
 
 
 ## Spring Framework
