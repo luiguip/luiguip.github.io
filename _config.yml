@@ -21,7 +21,7 @@
 title: Luis Guilherme de Almeida
 email: luisguilhermepdea@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Um blog de engenharia de sofware, voltado para desenvolvedores back-end. Aqui eu falo sobre Java, Spring, Arquitetura de Software e Microserviços.
+  Um blog de engenharia de software, voltado para desenvolvedores back-end. Aqui eu falo sobre Java, Spring, Arquitetura de Software e Microserviços.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: luiguipda
@@ -32,6 +32,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
+google-analytics: G-DJF8JMVHVX 
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
