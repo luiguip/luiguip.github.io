@@ -2,15 +2,17 @@
 layout: post
 title:  "Strategy design pattern utilizando o Spring Framework"
 date:   2023-09-12 16:00:00 -0300
-categories: Spring
+categories: Spring, Design Patterns, Java, SOLID
 ---
 
-Padrões de projeto nos auxiliam a desenvolver sistemas flexíveis e expansíveis. Regras de negócio são voláteis, e o software tem que se adequar a essas mudanças, sem perder a qualidade. O que mais vemos são sistemas legados, onde as boas práticas foram ignoradas e se tornou impraticável dar manutenção e desenvolvimento de novas funcionalidades.
-O Padrão de Design Strategy é um padrão de projeto que pertence à categoria dos padrões comportamentais. Ele oferece uma maneira de extrair regras diferentes de um objeto para outras classes, permitindo alterar esses comportamentos de forma isolada e extensível.
-Bacana, mas como fazemos para implementar o Strategy utilizando a injeção de dependências do Spring?
-Vou demonstrar duas formas que você pode implementar o Strategy na sua aplicação. Uma sem dependências externas e a segunda utilizando o Spring plugin, que nos permite implementar estratégias com regras mais rebuscadas.
+Padrões de projeto nos auxiliam a desenvolver sistemas flexíveis e expansíveis. Regras de negócio são voláteis, e o software tem que se adequar a essas mudanças, sem perder a qualidade. O que mais vemos são sistemas legados, em que as boas práticas foram ignoradas,  tornando impraticável a manutenção e o desenvolvimento de novas funcionalidades.
+O Design Pattern Strategy é um padrão de projeto que pertence à categoria dos padrões comportamentais. Ele oferece uma maneira de extrair regras diferentes de um objeto para outras classes, permitindo alterar esses comportamentos de forma isolada e extensível.
+
+Vou demonstrar duas formas que você pode implementar o Strategy na sua aplicação. Uma sem dependências externas e a segunda utilizando o Spring plugin, que nos permite implementar estratégias com regras mais rebuscadas. Ambas utilizam a injeção de dependências que o Spring nos oferece.
+
 ## Exemplo Prático
-Para demonstrar vamos supor que temos um sistema de pagamentos. Então oferecemos pagamento via Mercado Pago, Stripe e Pix. Além disso, queremos deixar o sistema extensível para adição, alteração e exclusão de formas de pagamento, assim não ficamos presos a nenhuma plataforma de pagamentos.
+
+Para demonstrar vamos supor que temos um sistema de pagamentos. Oferecemos três formas de pagamento: Mercado Pago, Stripe e Pix. Além disso, queremos deixar o sistema extensível para adição, alteração e exclusão, assim não ficamos presos a nenhuma plataforma de pagamentos.
 Vamos começar com a nossa classe de tipo de pagamento. Como temos os tipos de pagamento bem definidos e fixos, vamos utilizar um enum para representá-los.
 
 PaymentType.java
@@ -21,7 +23,7 @@ public enum PaymentType {
  MERCADO_PAGO, STRIPE, PIX
 }
 ```
-## Strategy utilizando somente o Spring
+## Strategy utilizando o Spring Core
 
 A implementação sem utilizar uma biblioteca externa é feita utilizando named beans. Os componentes implementam a mesma interface, que é quem vai ser usada na injeção de dependências.
 
@@ -51,7 +53,6 @@ public class MercadoPagoService implements PaymentService {
  }
 }
 ```
-
 StripeService.java
 ```java
 @Service("STRIPE")
@@ -233,4 +234,4 @@ Plugin strategy: STRIPE
 Plugin strategy: PIX
 ```
 
-Pudemos ver duas formas de implementar o Design Pattern Strategy, um sem dependência externa, e outro que necessitamos do Spring Plugin, e é bem mais poderosa. Existem muitos casos em que precisamos aplicar regras diferentes de acordo com um valor, e o Strategy nos permite respeitar o Open Closed Principle do SOLID, com um código extensível para quantos casos forem necessários.
+Pudemos ver duas formas de aplicar o Design Pattern Strategy, um sem dependência externa, mas limitado, e outro que necessitamos do Spring Plugin, entretanto mais poderoso. Existem muitos casos em que precisamos aplicar regras diferentes de acordo com uma condição, e o Strategy nos permite implementar essas regras, respeitando o Open Closed Principle do SOLID, com um código isolado para quantos casos forem necessários.
