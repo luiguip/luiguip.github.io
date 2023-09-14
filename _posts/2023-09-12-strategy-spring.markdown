@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Strategy design pattern utilizando o Spring Framework"
+title:  "Design Pattern Strategy utilizando o Spring Framework"
 date:   2023-09-13 21:00:00 -0300
 categories: Spring, Design Patterns, Java, SOLID
 ---
@@ -236,4 +236,4 @@ Plugin strategy: PIX
 
 Pudemos ver duas formas de aplicar o Design Pattern Strategy, um sem dependência externa, mas limitado, e outro que necessitamos do Spring Plugin, entretanto mais poderoso. Existem muitos casos em que precisamos aplicar regras diferentes de acordo com uma condição, e o Strategy nos permite implementar essas regras, respeitando o Open Closed Principle do SOLID, com um código isolado para quantos casos forem necessários.
 
-Link do projeto: https://github.com/luiguip/spring-strategy-example
+Link do projeto: [https://github.com/luiguip/spring-strategy-example](https://github.com/luiguip/spring-strategy-example  )
